@@ -15,6 +15,10 @@ export default function TextForm(props) {
     let nText = ("");
     setText(nText);
   };
+  const handelCopyClick = () => {
+    let nText = navigator.clipboard.writeText(text);
+    alert('Content copied to clipboard' + nText);
+  };
   const handelOnChange = (event) => {
     setText(event.target.value);
   };
@@ -35,6 +39,7 @@ export default function TextForm(props) {
         <button className="btn btn-outline-primary mx-1" onClick={handelUpClick}> Convert UpperCase </button>
         <button className="btn btn-outline-info mx-1" onClick={handelLoClick}> Convert UpperCase </button>
         <button className="btn btn-outline-danger mx-1" onClick={handelClearClick}> Clear </button>
+        <button className="btn btn-outline-success mx-1" onClick={handelCopyClick}> Copy </button>
       </div>
       <div className="container my-3">
         <h2>Text Summary</h2>
