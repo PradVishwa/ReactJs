@@ -1,9 +1,9 @@
 import "./App.css";
-import About from "./components/About";
+// import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light"); //Where Dark Mode Is Enable Or Not
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar
           title="PradTextUtils"
           aboutText="about us"
@@ -28,12 +28,13 @@ function App() {
           toggleMode={toggleMode}
         />
         <div className="container my-3">
-          <Routes>
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/" element={<TextForm heading="Enter the text to anlyze Below" mode={mode}  />} />
-          </Routes>
+          {/* <Routes> */}
+            {/* <Route exact path="/about" element={<About />} /> */}
+            {/* <Route exact path="/" element={<TextForm heading="Enter the text to anlyze Below" mode={mode}  />} /> */}
+          {/* </Routes> */}
+          <TextForm heading="Enter the text to anlyze Below" mode={mode}  />
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
